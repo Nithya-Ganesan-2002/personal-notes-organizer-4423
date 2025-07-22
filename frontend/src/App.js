@@ -47,6 +47,15 @@ function App() {
       color: 'blue',
       favorite: false,
     },
+    {
+      id: 5,
+      title: 'Paris Packing List',
+      content: 'Sunglasses, adapter, lightweight jacket.',
+      category: 'Travel',
+      date: 'May 24, 2024',
+      color: 'travel',
+      favorite: false,
+    },
   ]);
   const [query, setQuery] = useState('');
 
@@ -86,7 +95,9 @@ function App() {
   // PUBLIC_INTERFACE
   const renderNoteCard = (note) => (
     <div className="note-card" key={note.id}>
-      <div className={`note-category-pill ${note.color}`}>{note.category}</div>
+      <div className={`note-category-pill ${note.color === "travel" ? "travel" : note.color}`}>
+        {note.category === "Travel" ? <span role="img" aria-label="travel">🧳</span> : null} {note.category}
+      </div>
       <div className="note-title">{note.title}</div>
       <div className="note-content">{note.content}</div>
       <div className="note-meta">
@@ -158,13 +169,19 @@ function App() {
         </header>
         {/* TABS */}
         <nav className="tabs-bar">
-          {['All', 'Projects', 'Business', 'Personal'].map((tab) => (
+          {[
+            { value: 'All', label: 'All' },
+            { value: 'Projects', label: 'Projects' },
+            { value: 'Business', label: 'Business' },
+            { value: 'Personal', label: 'Personal' },
+            { value: 'Travel', label: <>🧳 Travel</> }
+          ].map((tab) => (
             <button
-              key={tab}
-              className={`tab-btn${activeTab === tab ? ' active' : ''}`}
-              onClick={() => handleTabChange(tab)}
+              key={typeof tab.label === "string" ? tab.label : tab.value}
+              className={`tab-btn${activeTab === tab.value ? ' active' : ''}`}
+              onClick={() => handleTabChange(tab.value)}
             >
-              {tab}
+              {tab.label}
             </button>
           ))}
         </nav>
