@@ -126,6 +126,12 @@
   cursor: pointer;
 }
 
+/* === CATEGORY INPUT SIDEBAR CUSTOM === */
+.category-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
 /* === MAIN CONTENT & HEADER === */
 .main-content {
   flex: 1;

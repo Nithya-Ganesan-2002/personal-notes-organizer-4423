@@ -136,6 +136,41 @@ function App() {
           <NavLink icon="🛠️" label="Support" />
           <NavLink icon="⚙️" label="Settings" />
         </nav>
+        {/* Category input field (sidebar/dashboard area) */}
+        <div className="category-input-wrapper" style={{ padding: "16px 24px 0 24px" }}>
+          <label htmlFor="sidebar-category-input" style={{
+            color: "#fff",
+            fontSize: 14,
+            letterSpacing: "0.01em",
+            fontWeight: 500,
+            display: "block",
+            marginBottom: 6,
+            opacity: 0.9
+          }}>
+            Category
+          </label>
+          <input
+            id="sidebar-category-input"
+            type="text"
+            placeholder="Type a category"
+            style={{
+              width: "100%",
+              borderRadius: 8,
+              border: "1.1px solid #edeaff44",
+              background: "#eaeafd22",
+              color: "#fff",
+              padding: "9px 13px",
+              fontSize: 15,
+              outline: "none",
+              marginBottom: 8,
+              marginTop: 0,
+              boxShadow: "none",
+              transition: "border 0.15s"
+            }}
+            // You can hook value and event if you want to set or use its value
+            // value={categoryState} onChange={handleCategoryChange}
+          />
+        </div>
         <div className="sidebar-footer">
           <div className="user-avatar" title="User options">
             <span role="img" aria-label="Profile">👤</span>
