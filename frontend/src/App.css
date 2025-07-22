@@ -306,6 +306,11 @@
 .note-category-pill.green { background: var(--note-pill-green, #66d380); }
 .note-category-pill.blue { background: var(--note-pill-blue, #7fd3ed); }
 .note-category-pill.orange { background: var(--note-pill-orange, #ffcb8d); color: #725700; }
+.note-category-pill.travel {
+  background: #ffd700; /* modern pastel gold for travel */
+  color: #8a7500;
+  /* pale gold, strong readability for modern minimal light theme */
+}
 
 .note-title {
   font-size: 18px;
